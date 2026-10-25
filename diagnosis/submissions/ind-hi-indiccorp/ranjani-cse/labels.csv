@@ -3,3 +3,6 @@ cd99ea990480ba1b,full,clean,,,,
 643f1174bb74305e,full,clean,,,,
 30bb0bf55cd17304,full,clean,,,,
 f9000a9730dae0f2,full,drop,F1,"phone number at offset ~40",,personal phone number
+da227e0a8cb528a2,full,drop,G3,"पदेश/पश्न missing र् at ~50",,scrambled OCR text
+cb5f6c3ec4650487,full,clean,,,,
+ca497975626e0564,full,clean,,,,
