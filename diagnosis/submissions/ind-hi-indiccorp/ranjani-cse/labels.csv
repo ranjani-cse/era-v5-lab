@@ -1,0 +1,5 @@
+doc_id,read,verdict,diseases,evidence,hex,note
+cd99ea990480ba1b,full,clean,,,,
+643f1174bb74305e,full,clean,,,,
+30bb0bf55cd17304,full,clean,,,,
+f9000a9730dae0f2,full,drop,F1,"phone number at offset ~40",,personal phone number
