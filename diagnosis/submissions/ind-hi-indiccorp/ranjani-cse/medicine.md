@@ -12,14 +12,14 @@ Three diseases found more than five times in the 500-document pack.
 
 2. **Medicine:** drop any document whose last non-whitespace character is not a sentence terminator.
 
-\`\`\`python
+python
 ```python
 import re
 TERM = re.compile(r'[।!?.\"\'”’)\]]\s*$')
 def medicine_c3(text):
     return not TERM.search(text.strip())
 ```
-\`\`\`
+
 
 3. **Action:** drop the document.
 
@@ -38,7 +38,7 @@ def medicine_c3(text):
 
 2. **Medicine:** flag a document if a Devanagari consonant is separated from its matra/virama by whitespace, or the corrupt sequence ज़् appears.
 
-\`\`\`python
+python
 ```python
 import re
 SPLIT_MATRA = re.compile(r'[\u0915-\u0939]\s+[\u093E-\u094D\u200C\u200D]')
@@ -46,7 +46,7 @@ MOJI        = re.compile(r'ज़्')
 def medicine_g1(text):
     return bool(SPLIT_MATRA.search(text) or MOJI.search(text))
 ```
-\`\`\`
+
 
 3. **Action:** fix the text (rejoin split matra); drop if mojibake is extensive.
 
@@ -65,7 +65,7 @@ def medicine_g1(text):
 
 2. **Medicine:** flag documents that look machine-translated or generated — high ratio of Latin tokens, no sentence terminator across a long text, or repeated function-word trigrams.
 
-\`\`\`python
+python
 ```python
 import re
 LATIN = re.compile(r'[A-Za-z]')
@@ -78,7 +78,7 @@ def medicine_g3(text):
     no_sentence = not TERM.search(text)
     repeated = text.count('के कारण') > 2
     return latin_ratio > 0.05 or (no_sentence and latin_ratio > 0.02) or repeated
-\`\`\`
+
 
 3. **Action:** drop the document.
 
