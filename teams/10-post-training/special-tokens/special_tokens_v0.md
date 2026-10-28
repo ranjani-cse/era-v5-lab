@@ -123,13 +123,15 @@ The budget covers the think span and the tool trace. It does not cover the visib
 ### 9. Ranjani Chandrasekaran — Indic web (`ind-hi-indiccorp`)
 
 - **Pack / Language / Source:** `ind-hi-indiccorp` — Hindi (`hi`) — `ai4bharat/IndicCorpV2` (`data/hi-{1,2,3}.txt`)
+- **Structural markers (special tokens):** `<|endoftext|>` (`000`), `<|im_start|>` (`001`), `<|im_end|>` (`002`) — none present in the 500-doc sample
+- **Effort (plain text, not tokens):** `Reasoning effort: {level}` at the top of the first system turn, where level ∈ `1k` (1024), `4k` (4096), `16k` (16384), `64k` (65536) tokens; IDs `016..019` are freed and stay reserved
 - **Dataset markers:**
-  - None — no ChatML ghost markers (`<|im_start|>`, `<|endoftext|>`, `<think>`, `<|tool_call|>`) in 500-doc sample (news/web prose)
+  - None — no ChatML ghost markers (`<|im_start|>`, `<|endoftext|>`, `<think>`, `<|tool_call|>`) in the 500-doc sample (news/web prose)
   - `U+200D` ZWJ — Devanagari script joiner, plain text
   - `U+200C` ZWNJ — Devanagari script joiner, plain text
   - `ज़्` — mojibake residue, corpus damage not marker
   - Latin spans (`COVID19`, `WWE`, URLs) — normal text
-  - Action: none — clean for ChatML v0
+  - Action: none — clean for ChatML v0; no `effort_*` tokens used
 
 ### 10. Ravi Naik — Dataset section *(placeholder for PR to `g10-week1-post-training`)*
 
